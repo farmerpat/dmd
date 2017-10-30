@@ -1,6 +1,17 @@
 <?php
 namespace Util;
 
+// this class name is a misnomer at present.
+// the comment in generateFiles indicates
+// that it will also be used to generate the
+// migration files. some class should utilize
+// composition and instantiate an instance of
+// this class and an instance of a third class
+// whose purpose is to generate the migration
+// files. the client class should probably
+// be called DatasetGenerator, and DatasetGenerator
+// and its children should be renamed.
+// This should probably be called JsonGenerator
 class GenerateJson {
     private $jDir = __dir__ . "/jsonfiles";
     private $targetDatasets = [

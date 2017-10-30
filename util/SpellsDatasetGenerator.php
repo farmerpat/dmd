@@ -5,7 +5,7 @@ class SpellsDatasetGenerator extends DatasetGenerator {
     public function __construct () {
         parent::__construct();
         $this->urlTemplate = 'http://www.dnd5eapi.co/api/spells/<id>/';
-        $this->jsonFileName = 'spells.xml';
+        $this->jsonFileName = 'spells.json';
         $this->generateKeyCollection();
     }
 
