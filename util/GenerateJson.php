@@ -18,7 +18,11 @@ class GenerateJson {
         "spells"
     ];
 
-    public function __construct () {
+    public function __construct (array $targetDatasets = []) {
+        if (is_array($targetDatasets) && (count($targetDatasets) > 0)) {
+            $this->targetDatasets = $targetDatasets;
+        }
+
         if (! file_exists($this->jDir)) {
             if (! mkdir($this->jDir) ) {
                 throw new \RuntimeException("unable to create directory {$jDir}");

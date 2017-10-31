@@ -2,7 +2,7 @@
 namespace Util;
 
 abstract class DatasetGenerator {
-    private $targetDirectory = __dir__;
+    private $targetDirectory = __dir__ . '/jsonfiles';
     protected $jsonFileName = '';
     protected $urlTemplate = '';
     protected $urlTemplateKey = '<id>';

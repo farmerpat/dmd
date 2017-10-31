@@ -1,14 +1,29 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Util\GenerateJson;
 
 class SpellsTableSeeder extends Seeder {
+    // should not have to keep track of this file in multiple places...
+    //
+    private $jsonFile = __dir__ . '/../../util/jsonfiles/spells.json';
     /**
      * Run the database seeds.
      *
      * @return void
      */
     public function run() {
+        // TODO
+        // re-examine the relationships between these classes.
+        // something about this seems counter-intuitive
+        if (! file_exists($this->jsonFile)) {
+            $gj = new GenerateJson([
+                'spells'
+            ]);
+
+            $gj->generateFiles();
+        }
+
         \DB::table('spells')->truncate();
         \DB::table('spells')->insert(
             $this->generateDataArray()
@@ -32,8 +47,7 @@ class SpellsTableSeeder extends Seeder {
     // and the filename that contains the seed data
     public function generateDataArray () {
         $entries = [];
-        $fname = __dir__ . '/../../util/jsonfiles/spells.json';
-        $handle = fopen($fname, 'r');
+        $handle = fopen($this->jsonFile, 'r');
 
         if ($handle) {
             while (($line = fgets($handle)) !== false) {
