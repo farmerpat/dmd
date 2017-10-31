@@ -1,16 +1,5 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Route::get('/', function () {
     return [
         'msg' => 'visit somewhere useful'
@@ -18,7 +7,7 @@ Route::get('/', function () {
 });
 
 Route::get('/spell', function () {
-    $spells = DB::table('spells')->get();
+    $spells = App\Spell::all();
 
     return view('spell.index', [
         'spells' => $spells
@@ -26,8 +15,7 @@ Route::get('/spell', function () {
 });
 
 Route::get('/spell/{id}', function ($id) {
-    //$spell = new \App\Spell;
-    $spell = DB::table('spells')->find($id);
+    $spell = App\Spell::find($id);
 
     return view('spell.show', [
         'spell' => $spell
