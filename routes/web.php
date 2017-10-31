@@ -1,9 +1,7 @@
 <?php
 
 Route::get('/', function () {
-    return [
-        'msg' => 'visit somewhere useful'
-    ];
+    return view('index');
 });
 
 Route::get('/spell', function () {
