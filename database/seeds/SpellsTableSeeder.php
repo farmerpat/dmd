@@ -1,4 +1,6 @@
 <?php
+// run with
+// $ php artisan db:seed --class=SpellsTableSeeder
 
 use Illuminate\Database\Seeder;
 use Util\GenerateJson;
