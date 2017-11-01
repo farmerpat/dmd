@@ -8,6 +8,8 @@ final class DatasetGeneratorFactory {
 
         if ($dsType == 'spells') {
             $dg = new SpellsDatasetGenerator;
+        } else if ($dsType == 'schools') {
+            $dg = new SchoolsDatasetGenerator;
         }
 
         if ($dg == null) {

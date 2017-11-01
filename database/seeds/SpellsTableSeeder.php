@@ -56,7 +56,6 @@ class SpellsTableSeeder extends Seeder {
                 $thisEntry = [];
 
                 $json = json_decode($line, true);
-                var_dump( $json );
 
                 if ($json) {
                     $thisEntry = $this->generateEntryFromJson($json);

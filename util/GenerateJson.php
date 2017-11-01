@@ -15,7 +15,8 @@ namespace Util;
 class GenerateJson {
     private $jDir = __dir__ . "/jsonfiles";
     private $targetDatasets = [
-        "spells"
+        "spells",
+        "schools"
     ];
 
     public function __construct (array $targetDatasets = []) {
