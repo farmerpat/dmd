@@ -3,11 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-//use App\Spell;
 
 class SpellsController extends Controller {
     public function index () {
-        $spells = \App\Spell::all();
+        $spells = \App\Spell::spellsWithSchoolId();
 
         return view('spell.index', [
             'spells' => $spells

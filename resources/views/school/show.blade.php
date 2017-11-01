@@ -5,19 +5,15 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <h1>
-                    {{ $spell->name }}
+                    {{ $school->name }}
                 </h1>
             </div>
         </div>
         <div class="row">
             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                <!--
-                    We need to explode on semicolons and react
-                    appropriately for some.. e.g. Alter Self
-                -->
                 <h4>Description</h4>
                 <p>
-                    {{ $spell->desc }}
+                    {{ $school->desc }}
                 </p>
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">

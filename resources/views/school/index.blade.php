@@ -12,7 +12,7 @@
 @section ("content")
 
     <table
-        id="spells_table"
+        id="schools_table"
         class="table table-striped table-bordered"
         cellspacing="0"
         width="100%"
@@ -20,30 +20,20 @@
         <thead>
             <tr>
                 <td>Name</td>
-                <td>Level</td>
-                <td>School</td>
+                <td>Description</td>
             </tr>
         </thead>
         <tbody>
 
-            @foreach ($spells as $spell)
+            @foreach ($schools as $school)
                 <tr>
                     <td>
-                        <a href="/spell/{{ $spell->id }}">
-                            {{ $spell->name }}
+                        <a href="/school/{{ $school->id }}">
+                            {{ $school->name }}
                         </a>
                     </td>
                     <td>
-                        @if ($spell->level == '0')
-                            Cantrip
-                        @else
-                            {{ $spell->level }}
-                        @endif
-                    </td>
-                    <td>
-                        <a href="/school/{{ $spell->school_id }}">
-                            {{ $spell->school }}
-                        </a>
+                        {{ $school->desc }}
                     </td>
                 </tr>
             @endforeach
@@ -60,7 +50,7 @@
     <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
     <script>
         $(document).ready(function() {
-            $('#spells_table').DataTable();
+            $('#schools_table').DataTable();
 
         } );
     </script>
