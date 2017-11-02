@@ -8,6 +8,7 @@ abstract class DatasetGenerator {
     protected $urlTemplateKey = '<id>';
     protected $curlInstance = null;
     protected $keyCollection = [];
+    protected $jsonFilters = [];
 
     public function __construct () {
         $this->curlInstance = curl_init();
@@ -48,6 +49,10 @@ abstract class DatasetGenerator {
             $json = $this->queryApi($key);
 
             if ($json) {
+                foreach ($this->jsonFilters as $filter) {
+                    $json = ($filter)($json);
+                }
+
                 fwrite($handle, $json . "\n");
             }
         }

@@ -127,16 +127,7 @@ class SpellsTableSeeder extends Seeder {
         $thisEntry['concentration'] = ($json['concentration'] == 'yes') ? true : false;
         $thisEntry['casting_time'] = $json['casting_time'];
         $thisEntry['level'] = $json['level'];
-
-        $school = $json['school'];
-
-        if (is_array($school) && array_key_exists('name', $school)) {
-            $school = $school['name'];
-        } else {
-            $school = 'unknown';
-        }
-
-        $thisEntry['school'] = $school;
+        $thisEntry['school'] = $json['school'];
 
         $classes = $json['classes'];
 

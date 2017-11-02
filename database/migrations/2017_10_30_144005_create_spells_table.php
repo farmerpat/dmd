@@ -27,8 +27,7 @@ class CreateSpellsTable extends Migration {
             $table->boolean('concentration');
             $table->string('casting_time');
             $table->integer('level');
-            // we probably want this to be an id that keys on school table id
-            $table->string('school');
+            $table->integer('school');
             // instead of this being a csv of class strings, we probably
             // want (in addition to a class table), and junction table
             // call spell_classes or something that can have multiple
