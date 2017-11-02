@@ -14,8 +14,8 @@ class Spell extends Model {
         return
             (new static)->
             newQuery()->
-            join('schools', 'school', '=', 'schools.name')->
-            select('spells.*', 'schools.id as school_id')->
+            join('schools', 'school', '=', 'schools.id')->
+            select('spells.*', 'schools.name as school_name')->
             get();
     }
 

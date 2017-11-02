@@ -41,8 +41,8 @@
                         @endif
                     </td>
                     <td>
-                        <a href="/school/{{ $spell->school_id }}">
-                            {{ $spell->school }}
+                        <a href="/school/{{ $spell->school }}">
+                            {{ $spell->school_name }}
                         </a>
                     </td>
                 </tr>
